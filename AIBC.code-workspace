@@ -1,0 +1,54 @@
+{
+	"folders": [
+		{
+			"name": ".alpackagesW1",
+			"path": ".alpackagesW1"
+		},
+		{
+			"name": "AIBC-AL",
+			"path": "AIBC-AL"
+		}
+
+	],
+	"settings": {
+		// Custom Settings:
+		"editor.codeLens": false,
+		"al.enableCodeAnalysis": true,
+		"al.codeAnalyzers": [
+		],
+		"al.ruleSetPath": "../AIBC.ruleset.json",
+		"al.incrementalBuild": false,
+		"al.enableCodeActions": false,
+		"al.compilationOptions": {},
+		// CRS settings:
+		"CRS.FileNamePatternExtensions": "<ObjectNameShort>.<ObjectTypeShortPascalCase>.al",
+		"CRS.FileNamePattern": "<ObjectNameShort>.<ObjectTypeShortPascalCase>.al",
+		"CRS.RenameWithGit": true,
+		//
+		"al.packageCachePath": "../.alpackagesW1",
+		"al.assemblyProbingPaths": [
+			"../.netpackages",
+			"c:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319",
+			"c:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319",
+			"C:\\Windows\\assembly"
+		],
+		// AL SOL Utils Settings:
+		"alsolutils.hyperlinks": [
+		],
+		"alsolutils.extractedTranslationsBasePath": "../.translations",
+		"alsolutils.alCompilerErrorLogPath": "../.logs",
+		"cSpell.ignoreWords": [
+			"Solitea"
+		]
+	},
+	"extensions": {
+		"recommendations": [
+			"ms-dynamics-smb.al",
+			"waldo.al-extension-pack"
+		],
+		"unwantedRecommendations": [
+			"365businessdevelopment.bdev-al-xml-doc",
+			"rasmus.al-formatter"
+		]
+	}
+}

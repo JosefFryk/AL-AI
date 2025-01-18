@@ -1,0 +1,37 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "https://businesscentral.dynamics.com/27fcefc4-70f0-4021-a6d7-cd4a4f7ea3da/dev",
+            "request": "launch",
+            "type": "al",
+            "environmentType": "Sandbox",
+            "environmentName": "dev",
+            "startupObjectId":84029,
+            "startupObjectType": "Page",
+            "breakOnError": "All",
+            "launchBrowser": true,
+            "tenant": "27fcefc4-70f0-4021-a6d7-cd4a4f7ea3da",
+            "enableLongRunningSqlStatements": true,
+            "enableSqlInformationDebugger": true,
+            "schemaUpdateMode": "ForceSync",
+            "startupCompany": "EST"
+        },
+        {
+            "name": "https://businesscentral.dynamics.com/27fcefc4-70f0-4021-a6d7-cd4a4f7ea3da/dev2",
+            "request": "launch",
+            "type": "al",
+            "environmentType": "Sandbox",
+            "environmentName": "Dev2",
+            "startupObjectId":84029,
+            "startupObjectType": "Page",
+            "breakOnError": "All",
+            "launchBrowser": true,
+            "tenant": "27fcefc4-70f0-4021-a6d7-cd4a4f7ea3da",
+            "enableLongRunningSqlStatements": true,
+            "enableSqlInformationDebugger": true,
+            "schemaUpdateMode": "ForceSync",
+            "startupCompany": "EGR"
+        }
+    ]
+}

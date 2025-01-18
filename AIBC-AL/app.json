@@ -1,0 +1,72 @@
+{
+  "id": "5ef5324f-523b-48f5-85b0-815de2a7e8b2",
+  "name": "AIBC",
+  "publisher": "Forey",
+  "version": "1.0.0.0",
+  "brief": "test",
+  "description": "testing AI-bot",
+  "screenshots": [],
+  "platform": "23.0.0.0",
+  "application": "25.0.0.0",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "privacyStatement": "",
+  
+  "dependencies": [
+    {
+      "id": "267b59d3-7302-44c5-ba77-c87000380514",
+      "name": "Core Localization Pack for Czech",
+      "publisher": "Microsoft",
+      "version": "24.3.0.0"
+    },
+    {
+      "id": "d6636d6f-155e-4490-9979-ec323a6b7c81",
+      "name": "Advance Payments Localization for Czech",
+      "publisher": "Microsoft",
+      "version": "24.3.0.0"
+    },
+    {
+      "id": "f12846ee-be97-4316-a5b3-ba789471687a",
+      "name": "Advanced Localization Pack for Czech",
+      "publisher": "Microsoft",
+      "version": "24.3.0.0"
+    },
+    {
+      "id": "bc0899d1-2cc9-4091-93f8-032538dbb70f",
+      "name": "Cash Desk Localization for Czech",
+      "publisher": "Microsoft",
+      "version": "24.3.0.0"
+    },
+    {
+      "id": "8730dafb-13cd-42c9-987c-decb6354269d",
+      "name": "Banking Documents Localization for Czech",
+      "publisher": "Microsoft",
+      "version": "24.3.0.0"
+    },
+    {
+      "id": "ef5dfe8c-ba1c-4271-8a86-95d5abdc6fe9",
+      "name": "Fixed Asset Localization for Czech",
+      "publisher": "Microsoft",
+      "version": "24.3.0.0"
+    }
+  ],
+  "idRanges": [
+    {
+      "from": 89000,
+      "to": 99999
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": true,
+    "includeSourceInSymbolFile": true
+  },
+  
+  "runtime": "14.0",
+  "features": [
+    "NoImplicitWith",
+    "TranslationFile"
+  ]
+}

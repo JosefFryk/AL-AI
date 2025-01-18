@@ -1,0 +1,31 @@
+﻿{
+    "name": "AIBC-RULES",
+    "description": "AIBC Rules",
+    "generalAction": "Hidden",
+    "rules": [
+        {
+            "id": "AS0016",
+            "action": "Hidden"
+        },
+        {
+            "id": "AS0051",
+            "action": "Hidden"
+        },
+        {
+            "id": "AS0052",
+            "action": "Hidden"
+        },
+        {
+            "id": "AS0084",
+            "action": "Hidden"
+        },
+        {
+            "id": "AS0092",
+            "action": "Hidden"
+        },
+        {
+            "id": "AS0094",
+            "action": "Hidden"
+        }
+    ]
+}
