@@ -1,42 +1,31 @@
-namespace Forey.ProjectZPL;
+namespace Forey.ProjectZPL.General;
 
 table 89550 OpenAISetup
 {
-    DataClassification = ToBeClassified;
+    DataClassification = CustomerContent;
 
     fields
     {
         field(1; PrimaryKey; Code[20])
         {
             Caption = 'Primary Key';
-            DataClassification = CustomerContent;
-        }
-        field(2; "API Key"; Text[250])
-        {
-            DataClassification = CustomerContent;
-            Caption = 'API Key';
-            ToolTip = 'API Key for OpenAI';
         }
         field(3; "Deployment"; Text[250])
         {
-            DataClassification = CustomerContent;
             Caption = 'Deployment';
             ToolTip = 'Deployment for OpenAI';
         }
         field(4; "Endpoint"; Text[250])
         {
-            DataClassification = CustomerContent;
             Caption = 'Endpoint';
             ToolTip = 'Endpoint for OpenAI';
         }
         field(5; KeyStorageId; Guid)
         {
-            DataClassification = CustomerContent;
         }
         field(6; IsEnabled; Boolean)
         {
             Caption = 'Is Enabled';
-            DataClassification = CustomerContent;
         }
     }
 

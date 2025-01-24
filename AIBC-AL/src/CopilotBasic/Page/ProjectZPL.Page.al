@@ -1,5 +1,6 @@
-namespace Forey.ProjectZPL;
+namespace Forey.ProjectZPL.CopilotBasic;
 using System.AI;
+using Forey.ProjectZPL.General;
 
 page 89550 "ZPL Main Page Project"
 {
@@ -86,21 +87,20 @@ page 89550 "ZPL Main Page Project"
         AOAIChatMessages: Codeunit "AOAI Chat Messages";
         AOAIOperationResponse: Codeunit "AOAI Operation Response";
         IsNotEnabledErr: Label 'Error: Open AI Setup is not enabled.';
+        IsolatedStorageWrapper: Codeunit "Isolated Storage Wrapper";
     begin
         if not OpenAISetup.Get() then
             Error(OpenAISetupErr);
 
         if not OpenAISetup.IsEnabled then
             Error(IsNotEnabledErr);
-        if not CopilotCapability.IsCapabilityRegistered(Enum::"Copilot Capability"::"Project ZPL Task Creation") then
-            CopilotCapability.RegisterCapability(Enum::"Copilot Capability"::"Project ZPL Task Creation", 'https://about:none');
 
         // If you are using managed resources, call this function:
         // NOTE: endpoint, deployment, and key are only used to verify that you have a valid Azure OpenAI subscription; we don't use them to generate the result
-        AzureOpenAI.SetManagedResourceAuthorization(Enum::"AOAI Model Type"::"Chat Completions",
-            GetEndpoint(), GetDeployment(), GetApiKey(), AOAIDeployments.GetGPT4oLatest());
+        // AzureOpenAI.SetManagedResourceAuthorization(Enum::"AOAI Model Type"::"Chat Completions",
+        //     GetEndpoint(), GetDeployment(), GetApiKey(), AOAIDeployments.GetGPT4oLatest());
         // If you are using your own Azure OpenAI subscription, call this function instead:
-        // AzureOpenAI.SetAuthorization(Enum::"AOAI Model Type"::"Chat Completions", GetEndpoint(), GetDeployment(), GetApiKey());
+        AzureOpenAI.SetAuthorization(Enum::"AOAI Model Type"::"Chat Completions", IsolatedStorageWrapper.GetEndpoint(), IsolatedStorageWrapper.GetDeployment(), IsolatedStorageWrapper.GetApiKey());
         AzureOpenAI.SetCopilotCapability(Enum::"Copilot Capability"::"Project ZPL Task Creation");
 
         AOAIChatCompletionParams.SetMaxTokens(2500);
@@ -114,28 +114,6 @@ page 89550 "ZPL Main Page Project"
             exit(AOAIChatMessages.GetLastMessage());
 
         exit('Error: ' + AOAIOperationResponse.GetError());
-    end;
-
-    local procedure GetApiKey(): SecretText
-    begin
-        if not OpenAISetup.Get() then
-            Error(OpenAISetupErr);
-        exit(Format(OpenAISetup.GetSharedAccessKey()));
-    end;
-
-    local procedure GetDeployment(): Text
-    begin
-        if not OpenAISetup.Get() then
-            Error(OpenAISetupErr);
-
-        exit(OpenAISetup.Deployment);
-    end;
-
-    local procedure GetEndpoint(): Text
-    begin
-        if not OpenAISetup.Get() then
-            Error(OpenAISetupErr);
-        exit(OpenAISetup.Endpoint);
     end;
 
     var

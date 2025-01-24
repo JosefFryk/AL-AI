@@ -1,4 +1,4 @@
-namespace Forey.ProjectZPL;
+namespace Forey.ProjectZPL.CopilotBasic;
 using Microsoft.Projects.Project.Job;
 
 pageextension 89550 JobList extends "Job List"

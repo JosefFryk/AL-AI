@@ -1,4 +1,4 @@
-namespace Forey.ProjectZPL;
+namespace Forey.ProjectZPL.General;
 using System.Security.Encryption;
 
 page 89551 "Open AI Setup"
@@ -15,10 +15,6 @@ page 89551 "Open AI Setup"
         {
             group(General)
             {
-                field("API Key"; Rec."API Key")
-                {
-
-                }
                 field(Deployment; Rec.Deployment)
                 {
 
@@ -50,6 +46,27 @@ page 89551 "Open AI Setup"
             }
         }
     }
+
+    actions
+    {
+        area(Processing)
+        {
+            action(InstallToDB)
+            {
+                ApplicationArea = All;
+                Caption = 'Install to DB';
+                Image = ServiceSetup;
+                Promoted = true;
+
+                trigger OnAction()
+                var
+                    SecretsAndCapabilitiesSetup: Codeunit SecretsAndCapabilitiesSetup;
+                begin
+                    SecretsAndCapabilitiesSetup.Run();
+                end;
+            }
+        }
+    }
     var
         SharedAccessKeyValue: Text;
         EncryptionIsNotActivatedQst: Label 'Data encryption is currently not enabled. We recommend that you encrypt data. \Do you want to open the Data Encryption Management window?';
@@ -58,5 +75,14 @@ page 89551 "Open AI Setup"
     begin
         if Rec.HasSharedAccessKey() then
             SharedAccessKeyValue := '*';
+    end;
+
+    trigger OnOpenPage()
+    begin
+        Rec.Reset;
+        if not Rec.Get then begin
+            Rec.Init;
+            Rec.Insert;
+        end;
     end;
 }
