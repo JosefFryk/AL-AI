@@ -1,3 +1,4 @@
 .vscode/launch.json
 .alpackagesW1/
 AIBC-AL/Translations/AIBC.g.xlf
+*.app
